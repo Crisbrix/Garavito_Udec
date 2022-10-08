@@ -5,6 +5,8 @@ public class Garavito_Udec {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Garavito_UdecF().setVisible(true);
+                
+                System.out.println("*sistema iniciado*");
             }
         });
     }
