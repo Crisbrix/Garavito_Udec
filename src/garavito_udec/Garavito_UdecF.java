@@ -1,12 +1,11 @@
 package garavito_udec;
-
-import java.awt.event.ActionEvent;
 import static java.lang.System.exit;
 import javax.swing.JOptionPane;
 
 public class Garavito_UdecF extends javax.swing.JFrame {
     //define variables
     int salir;
+    int v;
     int bot = 1;
     int matriz[][] = new int [3][3];
     int control;
@@ -14,13 +13,12 @@ public class Garavito_UdecF extends javax.swing.JFrame {
     int counto = 0;
     int count = 0;
     int counte = 0;
-    int Ng = 10;
+    int Ng = 0;
     int estatus = 1;
     
             
     public Garavito_UdecF() {
         initComponents();
-        text();
         
         name.setText("<html><fond text-align 'center'><h1><font color='black'>Triqui</h1>");
         
@@ -41,6 +39,7 @@ public class Garavito_UdecF extends javax.swing.JFrame {
         try
         {
             Ng = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero de partidas que deseean jugar: "));
+            text();
             do
             { 
                 estatus = 0;
@@ -76,8 +75,8 @@ public class Garavito_UdecF extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         P2 = new javax.swing.JTextField();
         P1 = new javax.swing.JTextField();
-        textj = new javax.swing.JTextField();
         Em = new javax.swing.JTextField();
+        text1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAutoRequestFocus(false);
@@ -85,8 +84,7 @@ public class Garavito_UdecF extends javax.swing.JFrame {
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setFocusCycleRoot(false);
 
-        jButton1.setBackground(new java.awt.Color(51, 51, 51));
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setBackground(new java.awt.Color(204, 204, 204));
         jButton1.setText("Salir");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -94,8 +92,7 @@ public class Garavito_UdecF extends javax.swing.JFrame {
             }
         });
 
-        vJugar.setBackground(new java.awt.Color(51, 51, 51));
-        vJugar.setForeground(new java.awt.Color(255, 255, 255));
+        vJugar.setBackground(new java.awt.Color(204, 204, 204));
         vJugar.setText("Volver a jugar");
         vJugar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -185,10 +182,11 @@ public class Garavito_UdecF extends javax.swing.JFrame {
         P1.setEditable(false);
         P1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
-        textj.setEditable(false);
-
         Em.setEditable(false);
         Em.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        text1.setEditable(false);
+        text1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -240,10 +238,10 @@ public class Garavito_UdecF extends javax.swing.JFrame {
                             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(Em, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addComponent(textj, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(178, 178, 178))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(text1))
+                        .addGap(170, 170, 170))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -290,8 +288,8 @@ public class Garavito_UdecF extends javax.swing.JFrame {
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(textj, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Em, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Em, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(text1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(18, Short.MAX_VALUE))
         );
 
@@ -398,15 +396,16 @@ public class Garavito_UdecF extends javax.swing.JFrame {
     }
     
     private void linea0 (){
-        if (matriz[0][0]+ matriz[0][1]+ matriz[0][2] == 252 ){
+        if (matriz[0][0] + matriz[0][1] + matriz[0][2] == 258){
             JOptionPane.showMessageDialog(rootPane, "Gano jugador 1");
             count ++;
             contx();
             borrar();
             NumberGames();
+            preguntas();
         }
         
-        if (matriz[0][0]+matriz[0][1]+matriz[0][1] == 720){
+        if (matriz[0][0]+matriz[0][1]+matriz[0][2] == 720){
             JOptionPane.showMessageDialog(rootPane, "Gano jugador 2");
             count ++;
             conto();
@@ -424,7 +423,7 @@ public class Garavito_UdecF extends javax.swing.JFrame {
             NumberGames();
         }
         
-        if (matriz[1][0]+matriz[1][1]+matriz[1][1] == 720){
+        if (matriz[1][0]+matriz[1][1]+matriz[1][2] == 720){
             JOptionPane.showMessageDialog(rootPane, "Gano jugador 2");
             count ++;
             conto();
@@ -442,7 +441,7 @@ public class Garavito_UdecF extends javax.swing.JFrame {
             NumberGames();
         }
         
-        if (matriz[2][0]+matriz[2][1]+matriz[2][1] == 720){
+        if (matriz[2][0]+matriz[2][1]+matriz[2][2] == 720){
             JOptionPane.showMessageDialog(rootPane, "Gano jugador 2");
             count ++;
             conto();
@@ -457,14 +456,14 @@ public class Garavito_UdecF extends javax.swing.JFrame {
 
             acu = acu + matriz[x][0];
 
-            if (acu == 1) {
+            if (acu == 258) {
                 JOptionPane.showMessageDialog(null, "JUGADOR X GANO");
                 count ++;
                 contx();
                 borrar();
                 NumberGames();
             }
-            if (acu == 2) {
+            if (acu == 720) {
                 JOptionPane.showMessageDialog(null, "JUGADOR O GANO");
                 count ++;
                 conto();
@@ -480,14 +479,14 @@ public class Garavito_UdecF extends javax.swing.JFrame {
 
             acu = acu + matriz[x][1];
 
-            if (acu == 1) {
+            if (acu == 258) {
                 JOptionPane.showMessageDialog(null, "JUGADOR X GANO");
                 count ++;
                 contx();
                 borrar();
                 NumberGames();
             }
-            if (acu == 2) {
+            if (acu == 720) {
                 JOptionPane.showMessageDialog(null, "JUGADOR O GANO");
                 count ++;
                 conto();
@@ -503,14 +502,14 @@ public class Garavito_UdecF extends javax.swing.JFrame {
 
             acu = acu + matriz[x][2];
 
-            if (acu == 1) {
+            if (acu == 258) {
                 JOptionPane.showMessageDialog(null, "JUGADOR X GANO");
                 count ++;
                 contx();
                 borrar();
                 NumberGames();
             }
-            if (acu == 2) {
+            if (acu == 720) {
                 JOptionPane.showMessageDialog(null, "JUGADOR O GANO");
                 count ++;
                 conto();
@@ -526,14 +525,14 @@ public class Garavito_UdecF extends javax.swing.JFrame {
 
             acu = acu + matriz[x][x];
 
-            if (acu == 1) {
+            if (acu == 258) {
                 JOptionPane.showMessageDialog(null, "JUGADOR X GANO");
                 count ++;
                 contx();
                 borrar();
                 NumberGames();
             }
-            if (acu == 2) {
+            if (acu == 720) {
                 JOptionPane.showMessageDialog(null, "JUGADOR O GANO");
                 count ++;
                 conto();
@@ -551,7 +550,7 @@ public class Garavito_UdecF extends javax.swing.JFrame {
             acu = acu + matriz[cont][i];
             cont --;
 
-            if (acu == 252) {
+            if (acu == 258) {
                 JOptionPane.showMessageDialog(null, "JUGADOR X GANO");
                 count ++;
                 contx();
@@ -590,9 +589,10 @@ public class Garavito_UdecF extends javax.swing.JFrame {
             control = 1;
             b1.setEnabled(false);
         }
+        
         empatejuego();
-        linea0();
-        linea3();
+        linea1();
+        linea4();
         lineax();
         NumberGames();
     }//GEN-LAST:event_b1ActionPerformed
@@ -610,8 +610,9 @@ public class Garavito_UdecF extends javax.swing.JFrame {
             b2.setEnabled(false);
         }
         
-        linea0();
-        linea3();
+        empatejuego();
+        linea1();
+        linea4();
         lineax();
         NumberGames();
     }//GEN-LAST:event_b2ActionPerformed
@@ -629,10 +630,14 @@ public class Garavito_UdecF extends javax.swing.JFrame {
             b3.setEnabled(false);
         }
         
+        empatejuego();
         linea0();
+        linea1();
         linea3();
         lineax();
-        NumberGames();
+        linea5();
+
+        lineaxb();
     }//GEN-LAST:event_b3ActionPerformed
 
     private void b4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b4ActionPerformed
@@ -648,10 +653,11 @@ public class Garavito_UdecF extends javax.swing.JFrame {
             b4.setEnabled(false);
         }
         
-        linea0();
+        empatejuego();
+        linea1();
         linea3();
         lineax();
-        NumberGames();
+        linea5();
     }//GEN-LAST:event_b4ActionPerformed
 
     private void b5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b5ActionPerformed
@@ -667,10 +673,11 @@ public class Garavito_UdecF extends javax.swing.JFrame {
             b5.setEnabled(false);
         }
         
-        linea0();
-        linea3();
+        empatejuego();
+        linea1();
+        linea4();
         lineax();
-        NumberGames();
+        lineaxb();
     }//GEN-LAST:event_b5ActionPerformed
 
     private void b6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b6ActionPerformed
@@ -686,8 +693,10 @@ public class Garavito_UdecF extends javax.swing.JFrame {
             b6.setEnabled(false);
         }
         
-        linea0();
+        empatejuego();
+        linea1();
         linea3();
+        linea5();
         lineax();
         NumberGames();
     }//GEN-LAST:event_b6ActionPerformed
@@ -705,10 +714,11 @@ public class Garavito_UdecF extends javax.swing.JFrame {
             b7.setEnabled(false);
         }
         
-        linea0();
+        empatejuego();
+        linea2();
         linea3();
         lineax();
-        NumberGames();
+        lineaxb();
     }//GEN-LAST:event_b7ActionPerformed
 
     private void b8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b8ActionPerformed
@@ -724,10 +734,10 @@ public class Garavito_UdecF extends javax.swing.JFrame {
             b8.setEnabled(false);
         }
         
-        linea0();
-        linea3();
+        empatejuego();
+        linea2();
+        linea4();
         lineax();
-        NumberGames();
     }//GEN-LAST:event_b8ActionPerformed
 
     private void b9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b9ActionPerformed
@@ -743,24 +753,35 @@ public class Garavito_UdecF extends javax.swing.JFrame {
             b9.setEnabled(false);
         }
         
-        linea0();
+        empatejuego();
+        linea2();
         linea3();
+        linea5();
         lineax();
-        NumberGames();
     }//GEN-LAST:event_b9ActionPerformed
     
     private void text(){
         String x = Integer.toString(Ng);
-        textj.setText(x);
-        System.out.println(Ng);
+        text1.setText(x);
     }
     
     private void salir(){
         salir = JOptionPane.showConfirmDialog(null,"¿Quieres salir del juego?");
         if(salir == 0){
             exit(0);
-        } 
+        }    
+    }
+    
+    private void preguntas(){
+    this.setVisible(false);
         
+    Preguntas v1 = new Preguntas();
+    v1.setVisible(true);
+    
+
+// Ahora para volver invisible en el JFrame actual
+
+    
     }
     
     private void empatejuego() {
@@ -770,7 +791,7 @@ public class Garavito_UdecF extends javax.swing.JFrame {
                 acu = acu + matriz[j][k];
             }
         }
-        if (acu == 1380 || acu == 1536) {
+        if (acu == 1544 || acu == 1390) {
 
             JOptionPane.showMessageDialog(rootPane, "¡Empate!");
             counte ++;
@@ -779,6 +800,8 @@ public class Garavito_UdecF extends javax.swing.JFrame {
             Em.setText(e);
             borrar();
         }
+        
+        System.out.println(acu);
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -800,7 +823,7 @@ public class Garavito_UdecF extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel name;
-    private javax.swing.JTextField textj;
+    private javax.swing.JTextField text1;
     private javax.swing.JButton vJugar;
     // End of variables declaration//GEN-END:variables
 }
