@@ -166,8 +166,6 @@ public class Questions extends javax.swing.JFrame {
         
         this.setVisible(false);
         
-        Garavito_UdecF v1 = new Garavito_UdecF();
-        v1.setVisible(true);
         
     }//GEN-LAST:event_SendActionPerformed
 

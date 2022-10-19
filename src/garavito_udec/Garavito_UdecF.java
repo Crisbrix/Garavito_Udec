@@ -13,18 +13,14 @@ public class Garavito_UdecF extends javax.swing.JFrame {
     int counto = 0;
     int count = 0;
     int counte = 0;
-    int Ng = 0;
-    int state = 1;
+    int Ng;
         
     
     //initialize panels of amount of games and game with the pc
     public Garavito_UdecF() {
         initComponents();
-        
-        
-        name.setText("<html><fond text-align 'center'><h1><font color='black'>Triqui</h1>");
-        
-        while(state == 1){
+        System.out.println(Ng);
+        while(Ng == 0){
             start();
             
         }
@@ -32,6 +28,8 @@ public class Garavito_UdecF extends javax.swing.JFrame {
     //Start of programm
     
     private void start(){
+        name.setText("<html><fond text-align 'center'><h1><font color='black'>Triqui</h1>");
+        
         bot = JOptionPane.showConfirmDialog(null, "¿Quieres jugar contra el pc?");
         
         if (bot == 2){
@@ -44,13 +42,12 @@ public class Garavito_UdecF extends javax.swing.JFrame {
             text();
             do
             { 
-                state = 0;
+                
             } 
             while(Ng<=0);
         }
         catch(Exception e){
         JOptionPane.showMessageDialog(rootPane, "No es un valor valido");
-        state = 1;
         }
         
     }
@@ -791,9 +788,6 @@ public class Garavito_UdecF extends javax.swing.JFrame {
     }
     //panel from questions
     private void questions(){
-        
-    //remove visibility to the current panel    
-    this.setVisible(false);
         
     //enable question panel visibility
     Questions v1 = new Questions();
