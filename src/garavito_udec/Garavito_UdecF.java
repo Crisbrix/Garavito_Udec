@@ -1,6 +1,9 @@
 package garavito_udec;
+//imports
 import static java.lang.System.exit;
 import javax.swing.JOptionPane;
+import java.applet.AudioClip;
+import java.io.File;
 
 public class Garavito_UdecF extends javax.swing.JFrame {
     //define variables
@@ -15,16 +18,25 @@ public class Garavito_UdecF extends javax.swing.JFrame {
     int counte = 0;
     int Ng;
         
-    
     //initialize panels of amount of games and game with the pc
     public Garavito_UdecF() {
         initComponents();
+        
+        AudioClip Sound;
+        Sound = java.applet.Applet.newAudioClip(getClass().getResource("/Garavito_Udec/song.wav"));
+        Sound.play();
+        System.out.println("sonido on XD");
+        
+        File fichero = new File("song.wav");
+        System.out.println("La ruta del fichero es: " + fichero.getAbsolutePath());
+        
         System.out.println(Ng);
         while(Ng == 0){
             start();
             
         }
     }
+    
     //Start of programm
     
     private void start(){

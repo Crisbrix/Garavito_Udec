@@ -4,14 +4,25 @@ import javax.swing.JOptionPane;
 
 
 public class Questions extends javax.swing.JFrame {
+    //declaration of variables
+        int i = 1;
     public Questions() {
         initComponents();
-        //declaration of variables
-        int num = 1;
-        int state = 0;
+        panelPrincipal(i);
+        question1();
         
+    }
+    
+    
+        
+        private void panelPrincipal(int i){
             //text principal
-            Question.setText("<html><h1>Pregunta "+num+"</h1>");
+            Question.setText("<html><h1>Pregunta "+i+"</h1>");
+            i ++;
+            System.out.println(i);
+        }
+        
+        private void question1(){
             //question    
             questions.setText("<html><p>¿Qué parentesco tiene conmigo el hermano de mi padre?</p>");
         
@@ -20,8 +31,8 @@ public class Questions extends javax.swing.JFrame {
             Group1.add(radio2);
             Group1.add(radio3);
             Group1.add(radio4);
-    }
-    
+        }
+            
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -163,6 +174,7 @@ public class Questions extends javax.swing.JFrame {
         if(radio1.isSelected()){
             JOptionPane.showMessageDialog(rootPane, "Correcto");
             this.setVisible(false);
+            
         }else{
             if (radio2.isSelected()){
                 JOptionPane.showMessageDialog(rootPane, "Incorrecto");
