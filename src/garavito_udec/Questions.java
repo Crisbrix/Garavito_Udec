@@ -162,14 +162,19 @@ public class Questions extends javax.swing.JFrame {
     private void SendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SendActionPerformed
         if(radio1.isSelected()){
             JOptionPane.showMessageDialog(rootPane, "Correcto");
+            this.setVisible(false);
+        }else{
+            if (radio2.isSelected()){
+                JOptionPane.showMessageDialog(rootPane, "Incorrecto");
+            }if (radio3.isSelected()){
+                JOptionPane.showMessageDialog(rootPane, "Incorrecto");
+            }if (radio4.isSelected()){
+                JOptionPane.showMessageDialog(rootPane, "Incorrecto");
+            }
         }
-        
-        this.setVisible(false);
-        
         
     }//GEN-LAST:event_SendActionPerformed
 
-   
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup Group1;
     private javax.swing.JLabel Question;
