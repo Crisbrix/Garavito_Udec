@@ -5,7 +5,7 @@ public class Garavito_Udec {
         java.awt.EventQueue.invokeLater(new Runnable() {
             
             public void run() {
-                Garavito_UdecF v1 = new Garavito_UdecF();
+                Questions v1 = new Questions();
                 v1.setVisible(true);
             }
         });

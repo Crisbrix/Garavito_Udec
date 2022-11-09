@@ -2,13 +2,10 @@ package garavito_udec;
 //imports
 import static java.lang.System.exit;
 import javax.swing.JOptionPane;
-import java.applet.AudioClip;
-import java.io.File;
 
 public class Garavito_UdecF extends javax.swing.JFrame {
     //define variables
     int exit;
-    int v;
     int bot = 1;
     int matriz[][] = new int [3][3];
     int control;
@@ -21,14 +18,7 @@ public class Garavito_UdecF extends javax.swing.JFrame {
     //initialize panels of amount of games and game with the pc
     public Garavito_UdecF() {
         initComponents();
-        
-        AudioClip Sound;
-        Sound = java.applet.Applet.newAudioClip(getClass().getResource("/Garavito_Udec/song.wav"));
-        Sound.play();
-        System.out.println("sonido on XD");
-        
-        File fichero = new File("song.wav");
-        System.out.println("La ruta del fichero es: " + fichero.getAbsolutePath());
+
         
         System.out.println(Ng);
         while(Ng == 0){
