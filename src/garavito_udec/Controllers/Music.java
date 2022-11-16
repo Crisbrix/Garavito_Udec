@@ -21,17 +21,6 @@ public void coge(String y){
         player.open(new File(ruta));
     }
 
-    public void Pausa() throws Exception {
-        player.pause();
-    }
-
-    public void Continuar() throws Exception {
-        player.resume();
-    }
-
-    public void Stop() throws Exception {
-        player.stop();
-    }
     public void reproducemp3 () throws Exception{
        try {
         Music sound = new Music();

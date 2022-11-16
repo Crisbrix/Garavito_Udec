@@ -13,15 +13,15 @@ public class Garavito_UdecF extends javax.swing.JFrame {
     int counto = 0;
     int count = 0;
     int counte = 0;
+    int queG = 0;
     int Ng1 = 0;
     public static int Ng = 0;
     
     //initialize panels of amount of games and game with the pc
     public Garavito_UdecF() {
         initComponents();
-        start();
         configurationPanel();
-        
+        start();
     }
     
     @SuppressWarnings("unchecked")
@@ -212,9 +212,11 @@ public class Garavito_UdecF extends javax.swing.JFrame {
                                 .addComponent(Em, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(labelNg, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(labelNg, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -282,7 +284,16 @@ public class Garavito_UdecF extends javax.swing.JFrame {
         numberGames v1 = new numberGames();
         v1.setVisible(false);
         Ng = numberGames.Ng1;
-        System.out.println("Numero start"+Ng);
+        
+        if (queG >= 1){
+            Questions v3 = new Questions();
+            v3.setVisible(false);
+            v3.setVisible(false);
+            Ng = v3.Ng2;
+            System.out.println(Ng);
+        }
+        
+        
         //retornar al numero de jugadas
         if (Ng == 0){
             v1.setVisible(true);
@@ -774,6 +785,7 @@ public class Garavito_UdecF extends javax.swing.JFrame {
    
     private void textNg(){
         labelNg.setText(""+Ng);
+        System.out.println(Ng);
     }
     //function to exit
     private void exit1(){
@@ -789,6 +801,7 @@ public class Garavito_UdecF extends javax.swing.JFrame {
     Questions v1 = new Questions();
     v1.setVisible(true);
     this.setVisible(false);
+    queG++;
     }    
     //tieGame and reset of matrix
     private void tieGame() {
@@ -803,6 +816,7 @@ public class Garavito_UdecF extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane, "¡Empate!");
             counte ++;
             Ng --;
+            labelNg.setText(""+Ng);
             String e = Integer.toString(counte);
             Em.setText(e);
             delete();

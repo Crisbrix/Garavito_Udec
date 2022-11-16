@@ -7,7 +7,7 @@ public class Questions extends javax.swing.JFrame {
     //declaration of variables
         int i = 1;
         public static int Ng2;
-        int Ng1;
+        public static int que = 1;
         int Ng;
         
         int numero = (int)(Math.random() * 10 - 1);
@@ -17,6 +17,8 @@ public class Questions extends javax.swing.JFrame {
         panelPrincipal(i);
         configurationPanel();
         numberR();
+        
+        
     }
     
     private void configurationPanel(){
@@ -26,12 +28,8 @@ public class Questions extends javax.swing.JFrame {
         
         Garavito_UdecF v2 = new Garavito_UdecF();
         v2.setVisible(false);
-        Ng1 = v2.Ng;
-        Ng2 = Ng1;
-        labelNg1.setText(""+Ng2);
-        System.out.println("A-"+Ng2);
-        Ng2--;
-        
+        labelNg1.setText(""+v2.Ng);
+        Ng2 = v2.Ng--;
     } 
     
     private void numberR(){

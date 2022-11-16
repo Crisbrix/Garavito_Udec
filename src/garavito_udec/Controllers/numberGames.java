@@ -90,9 +90,9 @@ public class numberGames extends javax.swing.JFrame {
     private void text(){
         Ngt = Ng.getText();
         Ng1 = Integer.parseInt(Ngt);
+        this.setVisible(false);
         Garavito_UdecF v2 = new Garavito_UdecF();
         v2.setVisible(true);
-        this.setVisible(false);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

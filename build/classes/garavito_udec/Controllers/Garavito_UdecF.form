@@ -83,9 +83,12 @@
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="labelNg" pref="124" max="32767" attributes="0"/>
-                          <Component id="jLabel4" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                              <Component id="labelNg" min="-2" pref="124" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="jLabel4" min="-2" pref="124" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
